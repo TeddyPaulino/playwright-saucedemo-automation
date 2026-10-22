@@ -1,0 +1,28 @@
+{
+  "name": "saucedemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test --headed",
+    "test:checkout": "playwright test tests/products/checkout.spec.ts",
+    "report:allure": "allure generate allure-results --clean -o allure-report",
+    "report:open": "allure open allure-report",
+    "test:checkout:report": "run-s --continue-on-error test:checkout report:allure report:open",
+    "clean:allure": "rimraf allure-results",
+    "test:all:report": "run-s --continue-on-error clean:allure test report:allure report:open"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4",
+    "allure-commandline": "^2.46.1",
+    "allure-playwright": "^3.13.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^6.1.3"
+  }
+}
