@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test --headed",
+    "test:ci": "playwright test",
     "test:checkout": "playwright test tests/products/checkout.spec.ts",
     "report:allure": "allure generate allure-results --clean -o allure-report",
     "report:open": "allure open allure-report",
